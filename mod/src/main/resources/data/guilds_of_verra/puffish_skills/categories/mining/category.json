@@ -1,0 +1,21 @@
+{
+  "title": {
+    "text": "Mining"
+  },
+  "description": {
+    "text": "Improve through mining natural stone, ores, and rare underground materials."
+  },
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:iron_pickaxe"
+    }
+  },
+  "background": {
+    "texture": "minecraft:textures/block/stone.png",
+    "width": 16,
+    "height": 16,
+    "position": "tile"
+  },
+  "unlocked_by_default": true
+}

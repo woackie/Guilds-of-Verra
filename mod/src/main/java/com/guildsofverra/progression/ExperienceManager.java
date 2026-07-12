@@ -1,9 +1,6 @@
 package com.guildsofverra.progression;
 
-import com.guildsofverra.GuildsOfVerra;
-import com.guildsofverra.player.PlayerManager;
-import com.guildsofverra.player.PlayerProfile;
-import com.guildsofverra.skills.Skill;
+import com.guildsofverra.integration.PuffishSkillsIntegration;
 import com.guildsofverra.skills.SkillType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -22,21 +19,22 @@ public final class ExperienceManager {
             return;
         }
 
-        PlayerProfile profile =
-                PlayerManager.getProfile(player.getUUID());
+        boolean awarded = PuffishSkillsIntegration.addExperience(
+                player,
+                skillType,
+                amount
+        );
 
-        Skill skill = profile.getSkill(skillType);
-
-        if (skill == null) {
-            GuildsOfVerra.LOGGER.error(
-                    "Player profile {} has no {} skill.",
-                    player.getUUID(),
-                    skillType
+        if (!awarded) {
+            player.displayClientMessage(
+                    Component.literal(
+                            skillType.getDisplayName()
+                                    + " category is not loaded"
+                    ),
+                    true
             );
             return;
         }
-
-        skill.addExperience(amount);
 
         player.displayClientMessage(
                 Component.literal(
@@ -47,13 +45,22 @@ public final class ExperienceManager {
                 ),
                 true
         );
+    }
 
-        GuildsOfVerra.LOGGER.debug(
-                "{} gained {} {} XP (total: {}).",
-                player.getGameProfile().getName(),
-                amount,
-                skillType.getDisplayName(),
-                skill.getExperience()
+    public static int getLevel(
+            ServerPlayer player,
+            SkillType skillType
+    ) {
+        return PuffishSkillsIntegration.getLevel(player, skillType);
+    }
+
+    public static int getTotalExperience(
+            ServerPlayer player,
+            SkillType skillType
+    ) {
+        return PuffishSkillsIntegration.getTotalExperience(
+                player,
+                skillType
         );
     }
 }

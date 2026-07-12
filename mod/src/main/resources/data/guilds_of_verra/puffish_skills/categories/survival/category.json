@@ -1,0 +1,21 @@
+{
+  "title": {
+    "text": "Survival"
+  },
+  "description": {
+    "text": "Advance through cooking, preparation, and surviving the wilderness."
+  },
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:campfire"
+    }
+  },
+  "background": {
+    "texture": "minecraft:textures/block/brown_wool.png",
+    "width": 16,
+    "height": 16,
+    "position": "tile"
+  },
+  "unlocked_by_default": true
+}

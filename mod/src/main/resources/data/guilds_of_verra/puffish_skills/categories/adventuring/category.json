@@ -1,0 +1,21 @@
+{
+  "title": {
+    "text": "Adventuring"
+  },
+  "description": {
+    "text": "Progress by travelling, discovering places, and reaching new dimensions."
+  },
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:compass"
+    }
+  },
+  "background": {
+    "texture": "minecraft:textures/block/cyan_wool.png",
+    "width": 16,
+    "height": 16,
+    "position": "tile"
+  },
+  "unlocked_by_default": true
+}

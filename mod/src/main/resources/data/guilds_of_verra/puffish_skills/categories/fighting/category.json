@@ -1,0 +1,21 @@
+{
+  "title": {
+    "text": "Fighting"
+  },
+  "description": {
+    "text": "Grow stronger by defeating enemies and overcoming combat challenges."
+  },
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:iron_sword"
+    }
+  },
+  "background": {
+    "texture": "minecraft:textures/block/red_wool.png",
+    "width": 16,
+    "height": 16,
+    "position": "tile"
+  },
+  "unlocked_by_default": true
+}
