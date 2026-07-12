@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "guilds_of_verra",
+	"version": "${version}",
+	"name": "Guilds of Verra",
+	"description": "A progression and adventuring framework for Minecraft.",
+	"authors": [
+		"Gilles Verhaeghe"
+	],
+	"contact": {
+		"sources": "https://github.com/woackie/Guilds-of-Verra"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/guilds_of_verra/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.guildsofverra.GuildsOfVerra"
+		]
+	},
+	"mixins": [
+		"guilds_of_verra.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
